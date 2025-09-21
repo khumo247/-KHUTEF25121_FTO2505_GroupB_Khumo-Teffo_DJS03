@@ -1,0 +1,129 @@
+🎧 PodcastApp
+
+A clean, responsive podcast browsing app built with vanilla HTML, CSS, and JavaScript (no frameworks required).
+
+Users can explore a grid of podcasts, filter by genre, sort by popularity or recency, search by keyword, and view detailed show info in a modal dialog.
+
+✨ Features
+
+Landing Grid: Browse podcast previews in a responsive card grid.
+
+Podcast Preview Cards: Each card shows:
+
+Cover image
+
+Title
+
+Season count
+
+Genre tags
+
+Last updated date (human-friendly format)
+
+Filters & Search:
+
+Filter podcasts by genre
+
+Sort by Recently Updated, Most Popular, or Newest
+
+Search by title or genre
+
+Modal Details:
+
+Podcast cover, title, description, genres
+
+Full last-updated date
+
+List of seasons with episode counts
+
+Close modal with X button, Escape key, or backdrop click
+
+Responsive Design: Works smoothly on desktop, tablet, and mobile.
+
+Accessibility:
+
+Keyboard navigation (cards open modal on Enter, Escape closes modal)
+
+Proper ARIA roles/labels
+
+Focus management for modals
+
+Clean Codebase:
+
+Modular, reusable functions
+
+Documented with JSDoc
+
+Consistent formatting across HTML, CSS, and JS
+
+📂 Project Structure
+PodcastApp/
+│
+├── index.html      # Main entry point
+├── styles.css      # Stylesheet (responsive grid, cards, modal, etc.)
+├── script.js       # App logic (filters, rendering, modal, search)
+└── README.md       # Project documentation
+
+🚀 Getting Started
+
+This project requires no installation. Just open the index.html file in any modern web browser.
+
+Steps
+
+Clone or download this repository.
+
+Place all files (index.html, styles.css, script.js, README.md) in the same folder.
+
+Open index.html in Chrome, Firefox, or Edge.
+
+Start browsing podcasts 🎉
+
+🛠️ Technologies
+
+HTML5 – semantic structure
+
+CSS3 – modern layout with Grid & Flexbox, responsive design
+
+Vanilla JavaScript (ES6+) – rendering, filtering, sorting, modal logic
+
+JSDoc – inline code documentation
+
+📸 Screenshots
+Landing Page (Desktop)
+
+Browse a responsive grid of podcasts.
+
+
+Podcast Modal
+
+Detailed view of a selected show.
+
+
+📖 Documentation
+
+All major functions and classes are documented with JSDoc inside script.js.
+
+Example:
+
+/**
+ * Filter podcasts by genre.
+ * @param {Podcast[]} list
+ * @param {string} genre
+ * @returns {Podcast[]}
+ */
+function filterByGenre(list, genre) { ... }
+
+🤝 Contributing
+
+Fork the repo
+
+Create a new branch (feature/new-feature)
+
+Commit your changes (git commit -m "Add feature")
+
+Push to your branch (git push origin feature/new-feature)
+
+Open a Pull Request
+
+
+⚡ PodcastApp: Browse smarter, listen better.
