@@ -1,0 +1,107 @@
+/* -------------------------
+   Base / Theme
+   ------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg:#f5f5f7;
+  --text:#1d1d1f;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --chip:#eef0f3;
+  --overlay:rgba(0,0,0,.55);
+  --max-width:1200px;
+}
+html,body{ height:100%; }
+body{ background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.5; }
+
+/* -------------------------
+   Top nav
+   ------------------------- */
+.top-nav{ background:#fff; padding:14px 18px; border-bottom:1px solid #e6e6e6; position:sticky; top:0; z-index:60; }
+.nav-container{ max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.nav-left{ display:flex; align-items:center; gap:12px; }
+.menu-btn, .profile-btn { border:0; background:transparent; padding:6px; border-radius:8px; cursor:pointer; font-size:18px; color:var(--text); }
+.menu-btn:hover,.profile-btn:hover{ background:var(--bg); }
+.logo{ font-weight:700; font-size:20px; line-height:1; }
+.logo span{ font-weight:400; color:var(--muted); }
+.nav-center{ flex:1; max-width:520px; margin:0 18px; }
+
+/* Search */
+.search-bar{ position:relative; background:#f0f2f5; padding:6px 10px 6px 36px; border-radius:20px; display:flex; align-items:center; gap:8px; }
+.search-bar svg{ position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--muted); }
+.search-bar input{ width:100%; border:0; background:transparent; outline:none; font-size:14px; color:var(--text); }
+
+/* -------------------------
+   Container + Filters
+   ------------------------- */
+.container{ max-width:var(--max-width); margin:18px auto; padding:0 18px 48px; }
+.filters{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+.filters-label{ color:var(--muted); font-weight:600; }
+select{ appearance:auto; border:1px solid var(--border); border-radius:8px; padding:8px 10px; background:#fff; color:var(--text); font-size:14px; }
+
+/* -------------------------
+   Podcast grid & cards
+   ------------------------- */
+.podcast-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+@media (max-width:1024px){ .podcast-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:768px){ .podcast-grid{ grid-template-columns:repeat(2,1fr); } .nav-center{ display:none; } }
+@media (max-width:560px){ .podcast-grid{ grid-template-columns:1fr; } }
+
+.podcast-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  cursor:pointer;
+  transition:transform .18s, box-shadow .18s;
+}
+.podcast-card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,.08); }
+
+.podcast-cover{
+  width:100%;
+  height:160px;
+  border-radius:8px;
+  background-size:cover;
+  background-position:center;
+  margin-bottom:12px;
+  flex-shrink:0;
+}
+.podcast-info{ display:flex; flex-direction:column; gap:6px; }
+.podcast-title{ font-size:16px; font-weight:600; color:var(--text); }
+.podcast-meta{ font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+.podcast-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.podcast-tag{ background:var(--chip); border:1px solid var(--border); border-radius:999px; padding:4px 8px; font-size:12px; color:var(--text); }
+
+/* -------------------------
+   Modal
+   ------------------------- */
+.modal{ position:fixed; inset:0; background:var(--overlay); display:none; align-items:flex-start; justify-content:center; padding:32px 16px; z-index:100; }
+.modal.show{ display:flex; }
+.modal-panel{ width:min(880px,100%); background:#fff; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.2); position:relative; overflow:auto; max-height:90vh; }
+.close-modal{ position:absolute; top:10px; right:12px; border:0; background:transparent; font-size:28px; line-height:1; cursor:pointer; color:#6b7280; }
+.modal-inner{ padding:22px; }
+.modal-title{ font-size:22px; font-weight:700; margin-bottom:12px; }
+.modal-top{ display:grid; grid-template-columns:180px 1fr; gap:18px; align-items:start; }
+@media (max-width:768px){ .modal-top{ grid-template-columns:1fr; } .modal-cover{ width:100%; height:200px; } }
+.modal-cover{ width:180px; height:180px; border-radius:8px; background-size:cover; background-position:center; }
+.section-title{ font-weight:600; margin-bottom:6px; color:#111827; }
+.description{ color:#374151; margin-bottom:12px; }
+.modal-tags{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.modal-updated{ color:var(--muted); font-size:14px; margin-top:8px; display:flex; align-items:center; gap:8px; }
+
+/* Seasons */
+.seasons{ margin-top:18px; }
+.seasons h3{ font-size:18px; margin-bottom:10px; }
+.season-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+.season-row{ display:flex; justify-content:space-between; align-items:center; background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+.season-meta{ max-width:78%; }
+.season-title{ font-weight:600; margin-bottom:4px; }
+.season-desc{ color:var(--muted); font-size:13px; }
+.episodes-count{ color:#374151; font-size:14px; }
+
+/* Accessibility helper */
+.visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
